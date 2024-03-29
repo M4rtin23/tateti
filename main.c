@@ -1,14 +1,40 @@
 #include<stdio.h>
 
-void print();
+void print(int center, int* board){
+	printf("Center: %i\n", center);
+	for(int i = 0; i < 8; i++){
+		printf("%i: %i\n",i, board[i]);
+	}
+}
+
+void printBoard(int center, int* board){
+	int array[9];
+	for(int i = 0; i < 8; i++){
+		if(board[i] == -1){
+			array[i] = 'X';
+		}else if(board[i] == 1){
+			array[i] = 'O';
+		}else{
+			array[i] = ' ';
+		}
+	}
+	if(center == -1){
+		array[8] = 'X';
+	}else if(center == 1){
+		array[8] = 'O';
+	}else{
+		array[8] = ' ';
+	}
+
+	printf("%c%c%c\n",array[0],array[1],array[2]);
+	printf("%c%c%c\n",array[3],array[8],array[4]);
+	printf("%c%c%c\n",array[5],array[6],array[7]);
+
+}
+
 
 int main(){
 	int board[8];
 	int center;
-
-	printf("Center: %i\n", center);
-	for(int i = 0; i < 8; i++){
-		printf("%i: %i\n",i, board[i]);
-		
-	}
+	printBoard(center, board);
 }
