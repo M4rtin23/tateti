@@ -1,13 +1,13 @@
 #include<stdio.h>
 
-void print(int center, int* board){
+void print(char center, char* board){
 	printf("Center: %i\n", center);
 	for(int i = 0; i < 8; i++){
 		printf("%i: %i\n",i, board[i]);
 	}
 }
 
-void printBoard(int center, int* board){
+void printBoard(char center, char* board){
 	int array[9];
 	for(int i = 0; i < 8; i++){
 		if(board[i] == -1){
@@ -34,7 +34,8 @@ void printBoard(int center, int* board){
 
 
 int main(){
-	int board[8];
-	int center;
+	char board[8];
+	char center;
 	printBoard(center, board);
+
 }
