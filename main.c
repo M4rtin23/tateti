@@ -27,8 +27,8 @@ void printBoard(char center, char* board){
 	}
 
 	printf("%c%c%c\n",array[0],array[1],array[2]);
-	printf("%c%c%c\n",array[3],array[8],array[4]);
-	printf("%c%c%c\n",array[5],array[6],array[7]);
+	printf("%c%c%c\n",array[7],array[8],array[3]);
+	printf("%c%c%c\n",array[6],array[5],array[4]);
 
 }
 
