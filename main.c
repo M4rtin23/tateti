@@ -1,4 +1,5 @@
 #include<stdio.h>
+#define bool _Bool
 
 void print(char center, char* board){
 	printf("Center: %i\n", center);
@@ -32,6 +33,34 @@ void printBoard(char center, char* board){
 
 }
 
+bool didPlayerWin(char center, char* board, char player){
+	if(center == player){
+		for(int i = 0; i < 4; i++){
+			if(board[i] == player){
+				if(board[i] == board[i+4]){
+					return 1;
+				}
+			}
+		}
+	}
+	for(int i = 0; i<7; i+=2){
+		if(board[i+1] == player){
+			if(board[i+1] == board[(i+2)%8]){
+				if(board[i+1] == board[i]){
+					return 1;
+				}
+				if(board[(i+2)%8] == board[(i+3)%8]){
+					if(board[(i+4)%8] == board[(i+3)%8]){
+						return 1;
+					}else{
+						return 0;
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
 
 int main(){
 	char board[8];
