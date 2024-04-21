@@ -43,19 +43,13 @@ bool didPlayerWin(char center, char* board, char player){
 			}
 		}
 	}
-	for(int i = 0; i<7; i+=2){
-		if(board[i+1] == player){
-			if(board[i+1] == board[(i+2)%8]){
-				if(board[i+1] == board[i]){
+	for(int i = 1; i<7; i+=2){
+		if(board[i] == player){
+			if(board[i] == board[(i+1)%8]){
+				if(board[i] == board[i-1]){
 					return 1;
 				}
-				if(board[(i+2)%8] == board[(i+3)%8]){
-					if(board[(i+4)%8] == board[(i+3)%8]){
-						return 1;
-					}else{
-						return 0;
-					}
-				}
+				i+=2;
 			}
 		}
 	}
